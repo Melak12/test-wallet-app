@@ -69,7 +69,7 @@ export function TransactionItem({ transaction, onClick }: TransactionItemProps) 
               {descriptionParts.join(" - ")}
             </span>
             {points !== null && (
-              <span className="text-[13px] text-gray-400 whitespace-nowrap pr-4">{points}%</span>
+              <span className="text-[11px] text-gray-400 whitespace-nowrap mr-4 bg-gray-100 px-1.5 py-0.5 rounded">{points}%</span>
             )}
           </div>
           

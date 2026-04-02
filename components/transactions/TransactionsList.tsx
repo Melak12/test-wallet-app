@@ -5,7 +5,6 @@ import { Transaction, TransactionsData } from "@/types/transaction";
 import { CardBalance } from "./CardBalance";
 import { NoPaymentDue } from "./NoPaymentDue";
 import { DailyPoints } from "./DailyPoints";
-import { CheckMark } from "./CheckMark";
 import { TransactionItem } from "./TransactionItem";
 import { TransactionDetail } from "./TransactionDetail";
 
@@ -29,18 +28,17 @@ export function TransactionsList({ data }: TransactionsListProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white pb-8">
+    <div className="min-h-screen bg-[#F5F5F7] pb-8">
       <div className="p-4 pt-2">
-        {/* Top Grid - Card Balance, No Payment Due */}
+        {/* Top Row - Card Balance, No Payment Due */}
         <div className="grid grid-cols-2 gap-2 mb-2">
           <CardBalance balance={cardBalance} available={available} />
           <NoPaymentDue />
         </div>
 
-        {/* Bottom Grid - Daily Points, Check Mark */}
-        <div className="grid grid-cols-2 gap-2">
+        {/* Daily Points - Full Width */}
+        <div className="w-1/2 pr-1">
           <DailyPoints />
-          <CheckMark />
         </div>
       </div>
 
@@ -50,7 +48,7 @@ export function TransactionsList({ data }: TransactionsListProps) {
       </div>
 
       {/* Transactions List */}
-      <div className="px-3">
+      <div className="bg-white mx-3 rounded-xl">
         {transactions.slice(0, 10).map((transaction) => (
           <TransactionItem
             key={transaction.id}

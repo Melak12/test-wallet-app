@@ -7,7 +7,7 @@ export function DailyPoints() {
   const formattedPoints = formatPoints(points);
   
   return (
-    <div className="bg-[#F5F5F7] rounded-2xl p-4 flex flex-col min-h-[110px]">
+    <div className="bg-white rounded-2xl p-4 flex flex-col min-h-[110px]">
       <span className="text-xs text-gray-500 font-medium">Daily Points</span>
       <span className="text-xl font-semibold text-gray-900 mt-1">{formattedPoints}</span>
     </div>
