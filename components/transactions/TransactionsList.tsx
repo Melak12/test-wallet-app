@@ -30,15 +30,13 @@ export function TransactionsList({ data }: TransactionsListProps) {
   return (
     <div className="min-h-screen bg-[#F5F5F7] pb-8">
       <div className="p-4 pt-2">
-        {/* Top Row - Card Balance, No Payment Due */}
-        <div className="grid grid-cols-2 gap-2 mb-2">
-          <CardBalance balance={cardBalance} available={available} />
+        {/* Grid layout: Left column has Card Balance + Daily Points, Right column has No Payment Due spanning both rows */}
+        <div className="grid grid-cols-2 gap-2">
+          <div className="flex flex-col gap-2">
+            <CardBalance balance={cardBalance} available={available} />
+            <DailyPoints />
+          </div>
           <NoPaymentDue />
-        </div>
-
-        {/* Daily Points - Full Width */}
-        <div className="w-1/2 pr-1">
-          <DailyPoints />
         </div>
       </div>
 

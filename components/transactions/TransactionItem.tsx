@@ -47,9 +47,11 @@ export function TransactionItem({ transaction, onClick }: TransactionItemProps) 
     <div className="border-b border-gray-100 last:border-b-0">
       <button
         onClick={onClick}
-        className="w-full flex items-start gap-3 py-3 px-1 hover:bg-gray-50 transition-colors text-left"
+        className="w-full flex items-center gap-3 py-3 px-4 hover:bg-gray-50 transition-colors text-left"
       >
-        <TransactionIcon icon={icon} iconBg={iconBg} name={name} />
+        <div className="flex-shrink-0">
+          <TransactionIcon icon={icon} iconBg={iconBg} name={name} />
+        </div>
         
         <div className="flex-1 min-w-0">
           {/* Row 1: Name and Amount */}
